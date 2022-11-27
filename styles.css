@@ -1,0 +1,215 @@
+/*
+1. Use a more-intuitive box-sizing model.
+*/
+*, *::before, *::after {
+    box-sizing: border-box;
+}
+/*
+2. Remove default margin
+*/
+* {
+    margin: 0;
+}
+/*
+3. Allow percentage-based heights in the application
+*/
+html, body {
+    height: 100%;
+    font-size: 16px;
+    font-family: var(--ff-base);
+}
+/*
+Typographic tweaks!
+4. Add accessible line-height
+5. Improve text rendering
+*/
+body {
+    line-height: 1.7;
+    -webkit-font-smoothing: antialiased;
+}
+/*
+6. Improve media defaults
+*/
+img, picture, video, canvas, svg {
+    display: block;
+    max-width: 100%;
+}
+/*
+7. Remove built-in form typography styles
+*/
+input, button, textarea, select {
+    font: inherit;
+}
+/*
+8. Avoid text overflows
+*/
+p, h1, h2, h3, h4, h5, h6 {
+    overflow-wrap: break-word;
+}
+/*
+9. Create a root stacking context
+*/
+#root, #__next {
+    isolation: isolate;
+}
+
+/* Root Styles */
+:root {
+    --clr-primary-200: hsl(225, 100%, 98%);
+    --clr-primary-300: hsl(225, 100%, 94%);
+    --clr-primary-400: hsl(224, 23%, 55%);
+    --clr-primary-500: hsl(223, 47%, 23%);
+
+    --clr-accent: hsl(238, 41%, 37%);
+
+    --clr-neutral-100: hsl(0, 0%, 100%);
+    --clr-neutral-200: hsl(245, 75%, 52%);
+
+    --ff-base: 'Red Hat Display', sans-serif;;
+
+    --transition: ;
+
+    --fw-regular: 500;
+    --fw-bold: 700;
+    --fw-black: 900;
+}
+
+/* general styles */
+
+.grid {
+    display: grid;
+}
+
+.flex {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.flex_column {
+    display: flex;
+    flex-direction: column;
+}
+
+.center_by_flex {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.center_by_grid {
+    display: grid;
+    place-content: center;
+}
+
+body {
+    background-color: var(--clr-primary-300);
+    margin: 1em;
+}
+
+article {
+    border-radius: 1.5rem;
+    overflow: hidden;
+    max-width: 28rem;
+    background-color: var(--clr-neutral-100);
+    gap: 10px;
+    box-shadow: 0px 47px 29px -3px rgb(198, 212, 249);}
+
+.hero_img {
+    width: 100%;
+}
+
+.content_container, .plan_container, .buttons_container {
+    padding: 1em;
+    text-align: center;
+}
+
+.content_container {
+    gap: 10px;
+}
+
+.content_container h2 {
+    color: var(--clr-primary-500);
+}
+
+.content_container p {
+    padding-inline: 1em;
+    font-weight: var(--fw-bold);
+    color: var(--clr-primary-400);
+    opacity: .8;
+}
+
+.plan_container {
+    background-color: var(--clr-primary-200);
+    justify-content: space-between;
+    align-items: center;
+    margin: 0 1.5em;
+    border-radius: .8rem;
+}
+
+.plan_container a {
+    font-weight: var(--fw-bold);
+    color: var(--clr-accent);
+}
+
+.price_container {
+   line-height: 1.5;
+}
+
+.annual_plan {
+    font-weight: var(--fw-black);
+}
+
+.buttons_container {
+    gap: 25px;
+    margin-bottom: 1em;
+}
+
+.icon {
+    margin-right: 1em;
+}
+
+.payment_btn {
+    font-family: var(--ff-base);
+    font-weight: var(--fw-bold);
+    color: var(--clr-primary-200);
+    background-color: var(--clr-neutral-200);
+    width: 100%;
+    border-radius: .5rem;
+    border: none;
+    outline: none;
+    padding: .825em;
+    box-shadow: 0px 30px 18px -3px rgb(224, 232, 255);
+}
+
+.buttons_container h4:hover, 
+.payment_btn:hover {
+    cursor: pointer;
+}
+
+.plan_container a:hover {
+    color: var(--clr-primary-400);
+}
+
+.payment_btn:hover {
+    background-color: var(--clr-accent);
+}
+
+.buttons_container h4 {
+    color: var(--clr-primary-400);
+}
+
+.buttons_container h4:hover {
+    color: var(--clr-primary-500);
+}
+
+@media screen and (min-width: 768px) {
+    body {
+        background-image: url('images/pattern-background-desktop.svg');
+        background-repeat: no-repeat;
+        background-size: contain;
+    }
+
+    .content_container p {
+        font-size: 1.2rem;
+    }
+}
